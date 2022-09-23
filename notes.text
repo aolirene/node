@@ -1,0 +1,100 @@
+17 aug 2022
+connect to our data base
+create a model, a schema and post something in our data base to ensure it is working and then shift pages aroundso that we change our project structure to mvc
+we are continuing with the project we have been using and keep adding to the same project
+install a package mongoose which helps connect node app to mongodb //connect app to data base //manipulate our database from node app
+mongodb://localhost:27017 is the url that we r going to use to connect to our app// its 
+click on connect to tart your compass
+commpass is located at mongodb://localhost:27017
+
+mongoose.connect("mongodb://localhost:27017/farm",
+{ useNewUrlParser: true,
+useUnifiedTopology: true},
+(err) => {
+    if(!err) console.log("Connected to mongo DB");
+    else console.log("Errorconnecting to mongoDB " + err)
+})
+
+
+
+explanation
+mongoose.connect("mongodb://localhost:27017 - that connect goes to where mongo db is loacted- if url gor mongo db is correct-
+calling on mongoose then calling the inbuilt connect function and then passing in the url or path to mongo db localhost:27017
+/farm - then go to database farm if that db doesnt exist it will create it if its there it will just connect to it.
+useNewUrlParser: true -going with newest version ogf passing the url
+useUnifiedTopology: true -upgrade from previous version. node needs you to specify which version you are using
+
+checks
+err - 
+ if(!err) console.log("Connected to mongo DB") - incase theres no Error connecting to mongo db
+  else console.log("Errorconnecting to mongoDB " + err) - incase theres an error connecting to mongo db the specific error
+  we are getting is passed (err)
+
+the app is divided into three components i.e model, view, controller
+you as user you senf your request it goes to the controller, then controller sends to the model then model sends to
+controller-receives and manipulates data and control of logic of app, its where data is stored, its where routes are kept
+routes and querries under controller
+
+model- includes schema and model
+view-whatever user sees on front end, html, about us, forms
+
+
+
+defining a file where our routes are found
+
+PUG to serve HTML
+PUG
+indent-whenever u place it means you are indenting otherwise you are placing spaces
+when developing a system using a node system it shows data available in your data base
+pug was designed to mix java script with html so as to write for loops in pug template which helps receive data from our server
+and display it to the user. the user sees it as html
+pug dynamically compute data received from node server and injects that data inside the template and show the data to the user
+pug includesfor loops, while loops, if statements
+
+we are writing the html in the synstax we shall use to write pug
+pug knows you have closed a tag by indentattion we use tab
+
+const data = new workerModel({
+//     name: "Irene",
+//     field: "Coffee",
+//     age:"26",
+//     salary:"10000000",
+// })
+// data.save()
+while looping in the pug, use the word each
+
+
+pug
+CRUD-Create read and delete
+tempating lang-preprocessor lang that compiles to html, converts code to html
+pug-diff languages
+html-static
+24/09/22
+https://html-to-pug.com
+create a path to the form.pug
+creating routes for workers go to worker routes
+we import the routes that have been exported in routes.js
+
+post
+the name of the input has to match with your schema. e.g scahema is in workermodel input is in worker form .pug in body part for input
+
+about mongoDB
+sometimes if the data existing is different from the one you are posting mong may not accept
+for this case we went to farm then workers went on the three dots dropped collection then went
+to browser and entered data again then back to mongo then refreshed then data was displayed
+24/08/22
+created a form which we haave been able to retriev in pug and we have also posted data so next updating and deleting
+
+
+26/08/22
+retrieve data from back end asin data base and display on front end
+
+model- to access data in the database (mainly for form)
+
+
+indexjs
+
+
+
+
+
